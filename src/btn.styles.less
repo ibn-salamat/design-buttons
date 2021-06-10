@@ -1,0 +1,127 @@
+.btn-icon {
+  .btn-default();
+  color: var(--btn-icon-color);
+  font-size: 16px;
+  padding: 15px 15px;
+}
+
+.btn-link {
+  .btn-default();
+  box-shadow: none;
+  background: none;
+  border: 1px solid transparent;
+
+  &.warning {
+    background: none;
+    color: var(--btn-link-color) !important;
+
+    &:hover {
+      background: var(--btn-link-bg-hover);
+    }
+
+    &:disabled {
+      color: var(--btn-link-color-disabled) !important;
+      background: none;
+    }
+  }
+
+  &:hover {
+    border: 1px solid transparent !important;
+  }
+  &:disabled {
+    border: 1px solid transparent !important;
+  }
+}
+
+.btn-default {
+  margin: 3px 5px;
+  padding: 16px 30px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid var(--btn-default-border-color);
+  outline: none;
+  background: none;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--btn-default-color);
+
+  & > .anticon + span,
+  .ant-btn > span + .anticon {
+    margin-left: 6px;
+  }
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    background: none;
+    color: var(--btn-default-color-hover);
+    border: 1px solid var(--btn-default-border-color-hover);
+  }
+
+  &:disabled {
+  }
+
+  &.primary {
+    .btn-default-theme(var(--btn-bg-default-primary), white);
+
+    .btn-default-effects(
+        var(--btn-bg-default-primary-hover),
+        var(--btn-bg-default-primary-disabled),
+        #fff
+      );
+  }
+
+  &.warning {
+    .btn-default-theme(var(--btn-bg-default-warning), white);
+
+    .btn-default-effects(
+        var(--btn-bg-default-warning-hover),
+        var(--btn-bg-default-warning-disabled),
+        #fff
+      );
+  }
+
+  &.error {
+    .btn-default-theme(var(--btn-bg-default-error), white);
+
+    .btn-default-effects(
+        var(--btn-bg-default-error-hover),
+        var(--btn-bg-default-error-disabled),
+        #fff
+      );
+  }
+
+  &.success {
+    .btn-default-theme(var(--btn-bg-default-success), white);
+
+    .btn-default-effects(
+        var(--btn-bg-default-success-hover),
+        var(--btn-bg-default-success-disabled),
+        #fff
+      );
+  }
+}
+// mixins
+.btn-default-theme(@bg-color, @color) {
+  border: 1px solid transparent;
+  background: @bg-color;
+  color: @color;
+}
+.btn-default-effects(@bg-hover, @bg-disabled, @color) {
+  &:hover {
+    background: @bg-hover;
+  }
+  &:disabled {
+    background: @bg-disabled;
+    color: @color;
+  }
+}
+// colors
+// p #3457b1
+// w #eab150
+// e #eb5757
+// s #27ae60;;;
