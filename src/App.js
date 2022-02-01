@@ -1,5 +1,10 @@
 import { Button } from "antd";
 import { DownloadOutlined, PlusCircleOutlined } from "@ant-design/icons";
+
+import "antd/dist/antd.css";
+import "./global.less";
+
+
 function App() {
   return (
     <>
